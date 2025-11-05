@@ -23,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Map<String, dynamic>> restaurants = [
     {
-      "name": "Spice Hub",
+      "name": "Legos",
       "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
       "rating": 4.3,
       "time": "30 mins",
@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
     },
     {
-      "name": "Urban Eatery",
+      "name": "Amul Eatery",
       "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
       "rating": 4.6,
       "time": "25 mins",
@@ -95,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
     },
     {
-      "name": "Pasta House",
+      "name": "Coca Cola",
       "image": "https://images.unsplash.com/photo-1589307004173-3c952fece49b?w=800",
       "rating": 4.4,
       "time": "20 mins",
@@ -131,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
     },
     {
-      "name": "Pizza Paradise",
+      "name": "Cafe 47",
       "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800",
       "rating": 4.7,
       "time": "35 mins",
@@ -203,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ]
     },
     {
-      "name": "Dessert Delight",
+      "name": "Uncle's Cafe",
       "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=800",
       "rating": 4.8,
       "time": "15 mins",

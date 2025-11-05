@@ -11,6 +11,7 @@ class CartScreen extends StatefulWidget {
   State<CartScreen> createState() => _CartScreenState();
 }
 
+
 class _CartScreenState extends State<CartScreen> {
   late List<FoodItem> cartItems;
   late Map<String, int> itemQuantities;
@@ -130,11 +131,11 @@ class _CartScreenState extends State<CartScreen> {
                         ),
                         child: const Text(
                           'Proceed to Checkout',
-                          style: TextStyle(
+                            style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
-                          ),
+                          )
                         ),
                       ),
                     ],
