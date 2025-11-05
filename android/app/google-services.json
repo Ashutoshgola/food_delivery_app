@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "815721883253",
+    "project_id": "canteen-food-app-f21d4",
+    "storage_bucket": "canteen-food-app-f21d4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815721883253:android:7afbd44f06f543bf39ba3c",
+        "android_client_info": {
+          "package_name": "com.example.food_delivery_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnXLkCvi2HbeRutFcf9zTjH4SWUYcVVbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

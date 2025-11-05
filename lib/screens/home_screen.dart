@@ -3,6 +3,7 @@ import 'package:badges/badges.dart' as badges;
 import 'package:carousel_slider/carousel_slider.dart';
 
 import '../models/food_item.dart';
+import '../services/auth_service.dart';
 import 'cart_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,6 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String searchQuery = "";
   String currentLocation = "Fetching location...";
   bool isLoadingLocation = true;
+  final AuthService _authService = AuthService();
 
 
   
@@ -271,6 +273,42 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+  void _showAccountMenu() {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (context) {
+        return Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text(
+                "Account Options",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 20),
+              ListTile(
+                leading: const Icon(Icons.logout, color: Colors.red),
+                title: const Text("Logout"),
+                onTap: () async {
+                  await _authService.logout();
+                  Navigator.of(context).pop(); // Close the bottom sheet
+                  // Navigate to login screen - the StreamBuilder in main.dart will handle this
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
   void showMenuDialog(Map<String, dynamic> restaurant) {
     showModalBottomSheet(
       context: context,
@@ -465,17 +503,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.account_circle, color: Colors.white, size: 28),
-            onPressed: () {
-              // Navigate to account/profile screen
-              ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text("Account page - Coming soon!"),
-                  duration: Duration(seconds: 1),
-                ),
-              );
-              // TODO: Navigate to account screen
-              // Navigator.push(context, MaterialPageRoute(builder: (context) => AccountScreen()));
-            },
+            onPressed: _showAccountMenu,
           ),
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -655,7 +683,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 8),
                         decoration: BoxDecoration(
-                          color: Colors.deepOrange.withOpacity(0.1),
+                          color: Colors.deepOrange.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(20),
                           border: Border.all(color: Colors.deepOrange),
                         ),
